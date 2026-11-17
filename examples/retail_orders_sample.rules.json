@@ -1,0 +1,105 @@
+{
+  "format": "dq-pipeline-rules",
+  "version": 1,
+  "dataset": "retail_orders_sample",
+  "rules": [
+    {
+      "rule_name": "Order ID is required",
+      "column_name": "order_id",
+      "rule_type": "required",
+      "parameters": {},
+      "severity": "error",
+      "is_enabled": true
+    },
+    {
+      "rule_name": "Order ID must be unique",
+      "column_name": "order_id",
+      "rule_type": "unique",
+      "parameters": {},
+      "severity": "error",
+      "is_enabled": true
+    },
+    {
+      "rule_name": "Email is required",
+      "column_name": "email",
+      "rule_type": "required",
+      "parameters": {},
+      "severity": "error",
+      "is_enabled": true
+    },
+    {
+      "rule_name": "Email must be valid",
+      "column_name": "email",
+      "rule_type": "email",
+      "parameters": {},
+      "severity": "error",
+      "is_enabled": true
+    },
+    {
+      "rule_name": "Age must be 18 to 100",
+      "column_name": "age",
+      "rule_type": "numeric_range",
+      "parameters": {
+        "min": 18,
+        "max": 100
+      },
+      "severity": "error",
+      "is_enabled": true
+    },
+    {
+      "rule_name": "Order date must be valid",
+      "column_name": "order_date",
+      "rule_type": "date",
+      "parameters": {
+        "format": "YYYY-MM-DD"
+      },
+      "severity": "error",
+      "is_enabled": true
+    },
+    {
+      "rule_name": "Payment status must be allowed",
+      "column_name": "payment_status",
+      "rule_type": "allowed_values",
+      "parameters": {
+        "values": [
+          "Paid",
+          "Pending",
+          "Delivered",
+          "Cancelled"
+        ]
+      },
+      "severity": "error",
+      "is_enabled": true
+    },
+    {
+      "rule_name": "Order amount must be positive",
+      "column_name": "order_amount",
+      "rule_type": "positive",
+      "parameters": {},
+      "severity": "error",
+      "is_enabled": true
+    },
+    {
+      "rule_name": "Delivery days 0 to 30",
+      "column_name": "delivery_days",
+      "rule_type": "numeric_range",
+      "parameters": {
+        "min": 0,
+        "max": 30
+      },
+      "severity": "error",
+      "is_enabled": true
+    },
+    {
+      "rule_name": "Rating 1 to 5",
+      "column_name": "rating",
+      "rule_type": "numeric_range",
+      "parameters": {
+        "min": 1,
+        "max": 5
+      },
+      "severity": "error",
+      "is_enabled": true
+    }
+  ]
+}

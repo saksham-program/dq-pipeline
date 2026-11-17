@@ -1,0 +1,32 @@
+{
+  "format": "dq-pipeline-rules",
+  "version": 1,
+  "exported_at": "2026-11-17T01:54:23.014Z",
+  "dataset": "dq_pipeline_retail_orders_balanced",
+  "rules": [
+    {
+      "rule_name": "Order ID must be unique",
+      "column_name": null,
+      "rule_type": "duplicate",
+      "parameters": {
+        "columns": [
+          "order_id"
+        ],
+        "ignoreEmpty": true
+      },
+      "severity": "error",
+      "is_enabled": true
+    },
+    {
+      "rule_name": "Order date must be valid",
+      "column_name": "order_date",
+      "rule_type": "data_type",
+      "parameters": {
+        "type": "date",
+        "format": "YYYY-MM-DD"
+      },
+      "severity": "error",
+      "is_enabled": true
+    }
+  ]
+}
