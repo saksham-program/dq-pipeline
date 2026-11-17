@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DQ Pipeline — Automated Data Quality & Pipeline Observability Platform
 
 DQ Pipeline is a web application for validating, monitoring, cleaning, tracking and publishing datasets. You bring a CSV file or a JSON API endpoint, define data-quality rules, run the pipeline, and inspect exactly which records were accepted or rejected — and why — with full run history, execution logs and downloadable reports.
@@ -282,3 +283,7 @@ Nitro uses its default preset. If you deploy to a specific platform (Cloudflare,
 ## License
 
 _No license file is included in this repository. Add one that matches how you intend to distribute the project._
+=======
+# dq-pipeline
+Automated Data Quality and Pipeline Observability Platform for data ingestion, validation, ETL processing, error tracking, reconciliation, and analytics.
+>>>>>>> 8cb829a3a79db1968c4c592de5d19e00cc59c064
