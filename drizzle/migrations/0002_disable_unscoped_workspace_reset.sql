@@ -1,0 +1,3 @@
+CREATE OR REPLACE FUNCTION public.reset_demo_workspace() RETURNS void LANGUAGE plpgsql SECURITY INVOKER SET search_path = public AS $$ BEGIN RAISE EXCEPTION 'Database resets are disabled. Demo workspaces are isolated from Cloud data.'; END; $$;
+REVOKE EXECUTE ON FUNCTION public.reset_demo_workspace() FROM PUBLIC, anon, authenticated;
+COMMENT ON FUNCTION public.reset_demo_workspace() IS 'DEPRECATED: disabled for safety; disposable demo data is isolated in browser memory, never deleted from shared Cloud tables.';
